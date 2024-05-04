@@ -15,7 +15,7 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
-@TestPropertySource(properties = {"custom.property=default"})
+//@TestPropertySource(properties = {"custom.property=default"})
 class CustomPropertiesApplicationTests {
 
     @Autowired
