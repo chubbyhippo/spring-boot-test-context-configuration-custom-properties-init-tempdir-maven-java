@@ -6,10 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.env.MapPropertySource;
-import org.springframework.core.env.MutablePropertySources;
 
 import java.util.HashMap;
-import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -24,12 +22,12 @@ class CustomPropertiesApplicationTests {
     void shouldChangePropertyDynamically() {
 
         //Get application properties
-        MutablePropertySources propertySources = context.getEnvironment().getPropertySources();
+        var propertySources = context.getEnvironment().getPropertySources();
         assertThat(context.getEnvironment()
                 .getProperty("custom.property")).isEqualTo("default");
 
         //Change custom.property value
-        Map<String, Object> map = new HashMap<>();
+        var map = new HashMap<String, Object>();
         map.put("custom.property", "new-value");
 
         propertySources.addFirst(new MapPropertySource("customMAP", map));
