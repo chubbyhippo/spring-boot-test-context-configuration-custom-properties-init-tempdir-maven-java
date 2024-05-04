@@ -24,13 +24,13 @@ class CustomPropertiesTempDirTest {
     private ConfigurableApplicationContext context;
 
     @TempDir
-    File tempDir;
+    private File tempDir;
 
     private File newDir;
     private File newFile;
 
     @BeforeEach
-    public void setup() throws IOException {
+    void setup() throws IOException {
         Map<String, Object> map = new HashMap<>();
 
         // Create new directory in temp directory
